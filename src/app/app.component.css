@@ -1,0 +1,21 @@
+:root {
+    --blanco: #FFF;
+}
+html {
+    font-size: 60%;
+    box-sizing: border-box;
+
+    
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+
+    
+
+}

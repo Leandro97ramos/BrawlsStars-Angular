@@ -1,1 +1,272 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+:root {
+    --blanco: #FFF;
+}
+html {
+    font-size: 60%;
+    box-sizing: border-box;
+    height: 100vh;
+
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    background-image: url(./assets/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+
+}
+
+
+
+
+/*
+a {
+    text-decoration: none;
+}
+
+#team img{
+    max-width: 100%;
+    width: 100px;
+    height: 100px;
+}
+
+/*.header_boton {
+    background-color: #6834a6;
+    display: block;
+    padding: 1rem;
+    text-align: center;
+    color: #FFF;
+    margin-bottom: 4rem;
+}
+
+.contenedor .grid {
+    display: flex;
+}
+
+.shelly.imagen{
+    display: none;
+}
+.boton{
+    font-size: 30px;
+    border-radius: 15px;
+}
+/*.header {
+    
+    
+    background-image: url(./assets/header_bg.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 770px;
+    padding: 50px 0;
+}/
+.contenedor {
+    max-width: 1155px;
+    margin: 0 25px;
+}*/
+
+
+/*.header_logo {
+    width: 160px;
+    margin: 0 auto 25px auto;
+}
+
+
+.selectOpt{
+    font-size: 18px;
+}
+
+.listado_elemento {
+    background-color: #FFF;
+    box-shadow: 0px 0px 15px 3px rgb(0 0 0 / .15);
+    padding: 2rem;
+    margin-bottom: 5rem;
+    transition-property: transform;
+    transition-duration: 300ms;
+}
+.listado_elemento:hover {
+    transform: scale(1.1);
+}
+
+.footer {
+    background-color: #5A30A0;
+    margin-top: 450px;
+}
+
+.footer_contacto{
+    text-align: center;
+}
+.footer_logo {
+    position: relative;
+    bottom: 33px;
+}
+
+.contenedor-canva{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.seleccionar-menu{
+    display: flex;
+    flex-direction: row;
+}
+
+.form-select{
+
+    font-size: 45px;
+}
+/*
+.camp{
+    position: relative;
+    width: 620px;
+    height: 690px;
+    border: 1px solid salmon;
+    background-image: url('img/mapUno.png');
+
+}/*
+.camp>div{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #5A30A0;
+    top: 10px;
+    left: 10px;
+    
+}
+.botones{
+    display: flex;
+    justify-content: center;
+}
+
+.marca-map{
+    position: absolute;
+    width: 150px;
+    height: 200px;
+}
+
+
+/*MEDIA QUERIES
+@media (min-width: 768px) { 
+    
+   /* .header_logo {
+        margin: 0;
+    }*/
+    
+    /*.header__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        align-items: center;
+    }
+    .title {
+        text-align: left;
+        font-size: 50px;
+    }
+  
+   /* .header_imagen {
+        max-width: 30rem;
+        margin: 0 auto;
+    }
+    .title.second{
+        text-align: center;
+    
+    }
+    .contenedor .grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 5rem;
+        align-items: center;
+    }
+    .shelly.imagen{
+        display: block;
+    }
+    .header {
+        background-size: 1000px;
+    }
+    .contenedor{
+        margin: 0 auto;
+
+    }
+    .main_contenedor{
+        border: 1px solid black;
+        border-radius: 70px;
+        -webkit-box-shadow: 0px 6px 34px -19px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 6px 34px -19px rgba(0,0,0,0.75);
+        box-shadow: 0px 6px 34px -19px rgba(0,0,0,0.75);
+        margin: 75px 0;
+        padding: 25px;
+        font-size: 45px;
+    }
+    .main_contenedor a{
+        font-size: 25px;
+    }
+    .subtitle {
+        font-size: 25px;
+        color: #6834a6;
+        margin: 0;
+    }
+    .text {
+        margin: 0;
+        font-size: 23px;
+        text-align: center;
+    }
+    .footer{
+        margin-top: 500px;
+
+    }
+    .footer_contenedor{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+
+    }
+
+    .footer_logo {
+        bottom: 312px;
+    }
+    .imgLogo{
+        max-width: 377px;
+
+    }
+
+    .contenedor-br{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }   
+    
+    .contenedor-br input{
+        width: 100px;
+        height: 100px;
+    }
+
+
+    #paginacion{
+            display: flex;
+            flex-direction: row;        
+    }
+
+    .item{
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        background: orange;
+    }
+
+    
+    
+}*/
+
+
+
