@@ -3,6 +3,8 @@
 :root {
     --blanco: #FFF;
 }
+
+
 html {
     font-size: 60%;
     box-sizing: border-box;

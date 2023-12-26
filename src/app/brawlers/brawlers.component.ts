@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BrawlersComponent implements OnInit {
 
-  constructor() { }
+  brawlers: any = [];
+
+  constructor() { 
+
+  }
 
   ngOnInit(): void {
+   
   }
 
 }

@@ -1,0 +1,18 @@
+
+<div class="container-brawls">
+    <ul>
+        
+        <li *ngFor="let brawler of brawlers">
+            <div class="Card-icon__image">
+                <img src="{{brawler.imageUrl}}" alt="{{brawler.name}}">
+            </div>
+            <div class="Card-icon__name">
+                <a [routerLink]="['/brawlers', brawler.id]">
+                    {{brawler.name}}
+                </a>
+            </div>
+
+        </li>
+
+    </ul>
+</div>

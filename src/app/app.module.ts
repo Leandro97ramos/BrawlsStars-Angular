@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrawlersComponent } from './brawlers/brawlers.component';
@@ -16,6 +16,7 @@ import { PostsComponent } from './posts/posts.component';
 import { RegisterComponent } from './register/register.component';
 import { MapsComponent } from './maps/maps.component';
 import { GameModeComponent } from './game-mode/game-mode.component';
+import { CardIconBrawlsComponent } from './brawlers/card-icon-brawls/card-icon-brawls.component';
 
 
 
@@ -34,10 +35,12 @@ import { GameModeComponent } from './game-mode/game-mode.component';
     PostsComponent,
     RegisterComponent,
     MapsComponent,
-    GameModeComponent
+    GameModeComponent,
+    CardIconBrawlsComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],
