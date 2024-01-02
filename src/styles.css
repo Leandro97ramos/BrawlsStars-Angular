@@ -13,12 +13,14 @@ html {
 }
 *, *:before, *:after {
     box-sizing: inherit;
+    color: #dfdcdc;
+    
 }
 body {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     line-height: 1.8;
-    background-image: url(./assets/background.jpg);
+    background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(./assets/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

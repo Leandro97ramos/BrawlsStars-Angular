@@ -1,18 +1,19 @@
+<div class="container-brawls" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="500"
+    (scrolled)="onScroll()" [scrollWindow]="true">
 
-<div class="container-brawls">
     <ul>
+        <li *ngFor="let brawler of brawlers" [routerLink]="['/brawler', brawler.id]" >
         
-        <li *ngFor="let brawler of brawlers">
-            <div class="Card-icon__image">
-                <img src="{{brawler.imageUrl}}" alt="{{brawler.name}}">
+            <div class="Card-icon__image" [style.border]="'5px solid ' + brawler.color">
+                <img src="{{brawler.image}}" alt="{{brawler.name}}">
             </div>
             <div class="Card-icon__name">
-                <a [routerLink]="['/brawlers', brawler.id]">
-                    {{brawler.name}}
+                <a>
+                    {{brawler.color}}
                 </a>
             </div>
-
         </li>
-
     </ul>
+
+    <div *ngIf="isLoading">Loading...</div>
 </div>

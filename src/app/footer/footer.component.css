@@ -1,0 +1,16 @@
+.footer {
+    background-color: #6834a670;
+    padding: 1.2rem;
+    margin-top: 5%;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer_contacto{
+    text-align: center;
+}
+.footer_logo {
+    position: relative;
+    bottom: 33px;
+}

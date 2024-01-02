@@ -9,11 +9,21 @@
 
 *{
     font-family: 'Nougat-ExtraBlack', sans-serif;
-    font-size: 2.5rem;
     color: #fff;
-    line-height: 1.8;
 
 
+}
+
+
+
+.data-card{
+    padding: 5px;
+    margin: 8px 0px;
+    width: 20%;
+    border: 1px solid black;
+    font-size: 30px;
+    text-align: center;
+    background-color: rgb(236, 234, 111);
 }
 
 
@@ -21,7 +31,7 @@ ul{
     
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    justify-items: stretch;
+    justify-items: center;
     padding: 0;
     margin: 0;
     padding: 0 5px;
@@ -29,10 +39,11 @@ ul{
 }
 
 li{
+    width: 75%;
     list-style: none;
     background: black;
     padding: 5px;
-    
+    margin: 2px;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
@@ -51,7 +62,7 @@ li{
 .Card-icon__name {
     position: relative;
     height: 0;
-    bottom: 28px;
+    bottom: 25px;
     left: 13px;
 
 }
@@ -60,6 +71,8 @@ li{
     position: relative;
     text-decoration: none;
     color: #fff;
+    font-size: 1.6rem;
+
 }
 
 
@@ -68,17 +81,28 @@ li{
 
 @media (min-width: 576px) {
 
+    .container-brawls{
+        width: 100%; /* Ajusta el ancho del contenedor según tus necesidades */
+        height: 200px; /* Ajusta la altura del contenedor según tus necesidades */
+        overflow-x: auto; /* Habilita el desplazamiento horizontal */
+        overflow-y: hidden;
+
+    }
     ul{
-        grid-template-columns: repeat(1, 1fr);
+        white-space: nowrap; /* Evita el salto de línea para los elementos */
+        display: inline-block;
+
     }
 
     li{
-        margin-bottom: 10px;
+        display: inline-block; /* Elementos dispuestos en línea */
+        width: 200px; /* Ancho de cada elemento, ajusta según tus necesidades */
+        height: 150px; /* Altura de cada elemento, ajusta según tus necesidades */
+        margin-right: 10px;
     }
 
     .Card-icon__name {
-        bottom: 0;
-        left: 0;
+     
     }
 
 }

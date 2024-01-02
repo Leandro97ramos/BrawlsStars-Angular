@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GameModeComponent } from './game-mode.component';
+import { ScrollInfiniteComponent } from './scroll-infinite.component';
 
-describe('GameModeComponent', () => {
-  let component: GameModeComponent;
-  let fixture: ComponentFixture<GameModeComponent>;
+describe('ScrollInfiniteComponent', () => {
+  let component: ScrollInfiniteComponent;
+  let fixture: ComponentFixture<ScrollInfiniteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GameModeComponent ]
+      declarations: [ ScrollInfiniteComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GameModeComponent);
+    fixture = TestBed.createComponent(ScrollInfiniteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
