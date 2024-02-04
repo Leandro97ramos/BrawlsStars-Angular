@@ -78,42 +78,6 @@ export class CardIconBrawlsComponent implements OnInit {
   }
 
 
-
-
-  /*
-   loadData = () => {
-
-
-    this.toggleLoading();
-
-
-    this.service.getItemsBrawls(this.currentPage, this.itemsPerPage).subscribe({
-
-      next: response => this.brawlers = response,
-      error: err => console.log(err),
-      complete: () => this.toggleLoading()
-
-    })
-
-  }
-  
-  
-  
-  appendData = () => {
-
-    this.toggleLoading();
-    //console.log(`brawls: ${this.brawlers.length}`);
-
-    this.service.getItemsBrawls(this.currentPage, this.itemsPerPage).subscribe({
-      next: response => this.brawlers = [...this.brawlers, ...response],
-      error: err => console.log(err),
-      complete: () => this.toggleLoading()
-    })
-
-  }
-
-  */
-
   onScroll = () => {
     if (this.brawlers.length != 76) {
 

@@ -1,5 +1,10 @@
 
 <!--Card  -->
 
+<div class="container-brawls" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="500"
+(scrolled)="onScroll()" [scrollWindow]="true" >
 
-    <app-card-icon-brawls class="card-icon-brawls" ></app-card-icon-brawls>
+
+<app-scroll-infinite [data]="brawlers" [route]="'brawler'" ></app-scroll-infinite>
+
+</div>

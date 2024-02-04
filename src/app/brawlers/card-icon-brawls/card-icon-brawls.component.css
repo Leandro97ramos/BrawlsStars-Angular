@@ -1,7 +1,7 @@
-
+/*
 @font-face {
     font-family: 'Nougat-ExtraBlack';
-    src: url('../../../assets/fonts/Nougat-ExtraBlack.ttf') format('truetype'); /* Cambia la extensión a .ttf */
+    src: url('../../../assets/fonts/Nougat-ExtraBlack.ttf') format('truetype'); 
     font-weight: 400;
     font-style: normal;
 }

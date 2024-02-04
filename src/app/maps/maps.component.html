@@ -1,1 +1,8 @@
-<p>maps works!</p>
+<h1>Funca</h1>
+<div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="500" (scrolled)="onScroll()"
+    [scrollWindow]="true">
+
+
+    <app-scroll-infinite [data]="itemsMaps" [route]="'maps'"></app-scroll-infinite>
+
+</div>

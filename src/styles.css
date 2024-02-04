@@ -9,6 +9,7 @@ html {
     font-size: 60%;
     box-sizing: border-box;
     height: 100vh;
+    overflow-x: hidden;
 
 }
 *, *:before, *:after {
@@ -25,9 +26,21 @@ body {
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
+    overflow-x: hidden;
 
 }
 
+.owl-item{
+    text-align: center;
+    
+}
+.owl-item a{
+    text-decoration: none;
+}
+.owl-stage {
+    display: flex ;
+    /* Otros estilos si es necesario */
+  }
 
 
 

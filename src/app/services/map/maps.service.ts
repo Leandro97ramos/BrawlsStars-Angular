@@ -9,7 +9,7 @@ import { map, switchMap } from 'rxjs/operators';
 })
 export class MapsService {
 
-  private url = 'http://localhost:3333/api/brawls';
+  private url = 'http://localhost:3333/api/maps';
 
   private totalMaps: any[]=[];
   constructor(private http: HttpClient) { }
@@ -33,6 +33,8 @@ export class MapsService {
           }
         }
 
+        //console.log('Items:', items);
+
         return of(items);
       })
     );
@@ -43,7 +45,8 @@ export class MapsService {
   public getMaps(): Observable<any[]> {
     return this.http.get<any[]>(this.url).pipe(
       map((data: any[]) => {
-        return Object.values(data)[1] || []; // Retorna los datos como es habitual, devuelve un array vacío si no hay datos
+        //console.log(Object.values(data)[0]);
+        return Object.values(data)[0] || []; // Retorna los datos como es habitual, devuelve un array vacío si no hay datos
       })
     );
   }
@@ -52,7 +55,7 @@ export class MapsService {
     return this.http.get<any>(`${this.url}/${id}`).pipe(
       map((data: any) => {
       
-        console.log(data);
+        //console.log(data);
         
         return data || {}; // Retorna los datos como es habitual, devuelve un objeto vacío si no hay datos
       })
