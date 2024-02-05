@@ -1,4 +1,4 @@
-import { Component, HostListener, ElementRef, ViewChild, Input, OnChanges, SimpleChanges, AfterViewInit } from '@angular/core';
+import { Component, HostListener, ElementRef, ViewChild, Input, OnChanges, SimpleChanges, AfterViewInit, EventEmitter, Output } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Observable, of } from 'rxjs';
 
@@ -11,13 +11,13 @@ import { Observable, of } from 'rxjs';
 export class ScrollInfiniteComponent implements OnChanges,AfterViewInit  {
 
   @Input() data: any = {};
-
-  //DATOSINDEXADOS
+  @Input() route: string;
+  @Input() allFilters: string[] = [];
+  @Output() filterSelected = new EventEmitter<string>(); 
+  
   dataIndexed: any = {};
 
   tagFilter:any = [];
-
-  @Input() route: string;
 
   isDataReady: boolean = false;
 
@@ -32,7 +32,9 @@ export class ScrollInfiniteComponent implements OnChanges,AfterViewInit  {
     this.data = [];
     this.dataIndexed = [];
     this.tagFilter = [];
+    this.allFilters = [];
     this.route = '';
+     
   }
 
   /*Carrousel*/
@@ -71,9 +73,9 @@ customOptions: OwlOptions = {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['data']) {
       //console.log('Datos recibidos en app-scroll-infinite:', this.data);
-      this.tagFilter = [...new Set(this.data.map((item: any) => item.filter))];
+      this.tagFilter = [...new Set(this.data.map((item: any) => this.allFilters.filter))];
       this.tagFilter.unshift('All');    
-      console.log('Data:', this.data);
+      console.log('Filter:', this.allFilters);
      // this.getItemsMaps();
   
 
@@ -82,20 +84,18 @@ customOptions: OwlOptions = {
   }
   
   filtrar = (tag: string): void => {
-    console.log('Filtrar por:', tag);
-    //si esta en all, mostrar todos los elementos
-    if (tag === 'All') {
-      this.isDataReady = true;
-      return;
-    }
-    //filtrar por tag
-    this.isDataReady = false;
-    this.data = this.data.filter((item: any) => item.filter === tag);
-    this.isDataReady = true;
-    
+   
 
 
    
+  }
+
+  onFilterClick(filter: string): void {
+    this.filterSelected.next(filter);
+
+    console.log('Filtrar por:', filter);
+   
+    
   }
 
 get isDataAvailable(): boolean {

@@ -3,6 +3,6 @@
     [scrollWindow]="true">
 
 
-    <app-scroll-infinite [data]="itemsMaps" [route]="'maps'"></app-scroll-infinite>
+    <app-scroll-infinite [data]="maps" [allFilters]="filter" [route]="'maps'" (filterSelected)="handleFilterSelection($event)"></app-scroll-infinite>
 
 </div>

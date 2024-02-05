@@ -10,8 +10,7 @@ import { Observable, of } from 'rxjs';
 export class MapsComponent implements OnInit, OnChanges {
 
   maps: any[];
-  itemsMaps: any[];
-  tagFilter: any[];
+  filter: string[];
   isLoading: boolean;
   currentPage: number;
   itemsPerPage: number;
@@ -19,42 +18,51 @@ export class MapsComponent implements OnInit, OnChanges {
 
   constructor(private service: MapsService) {
     this.maps = [];
-    this.itemsMaps = [];
-    this.tagFilter = [];
     this.isLoading = false;
     this.currentPage = 1;
     this.itemsPerPage = 10;
+    this.filter = [];
   }
 
   ngOnChanges(): void {
-    console.log('ngOnChanges', this.itemsMaps);
+    
   }
 
   ngOnInit(): void {
     this.loadAllData();
-    this.appendData();
+    this.getAllFilters();
   }
 
   onScroll = () => {
     this.currentPage++;
-    
     this.appendData();
 
   }
 
+  getAllFilters(): void {
+    //obtener todos los filtros
+    this.service.getMaps().pipe(
+      map((data: any[]) => {
+          //obtengo todos los filtros
+          const filters = data.map(item => item.gameMode.name);
+          //agrego primero el filtro 'all'
+          filters.unshift('all');
+          return filters.filter((item, index) => filters.indexOf(item) === index);
+      })
+    ).subscribe({
+      next: response => this.filter = response,
+      error: err => console.log(err),
+      complete: () => console.log('filters:', this.filter)
+    });
+      
 
-  /*
-    1.- Obtengo todos los mapas
-    2.- Filtro los mapas por pagina
-
-  */
-
-
+  }
+  
 
   loadAllData = (): void => {
     this.toggleLoading();
 
-    this.service.getMaps().pipe(
+    this.service.getItemsMaps().pipe(
       map((response: any[]) => {
         const uniqueMaps = this.getUniqueMaps(response);
         return uniqueMaps.map(item => ({
@@ -62,41 +70,64 @@ export class MapsComponent implements OnInit, OnChanges {
           name: item.name,
           image: item.imageUrl,
           color: item.gameMode.color,
-          filter: item.gameMode.name
         }));
       })
     ).subscribe({
-      next: (response) => {
-        //console.log('maps:', response);
-        this.maps = response;
-        //console.log('maps:', this.maps);
-      },
-      error: (err) => {
-        console.error('Error loading data:', err);
-        // Puedes agregar lógica adicional para manejar el error, mostrar un mensaje, etc.
-      },
-      complete: () => {
-        this.toggleLoading();
-        // Puedes realizar otras acciones después de completar la carga de datos
-      }
-    }).add(() => {
-      this.getItemsMaps(this.currentPage, this.itemsPerPage).subscribe({
-        next: (response) => {
-          this.itemsMaps = response;
-          console.log('itemsMaps:', this.itemsMaps);
-        },
-        error: (err) => {
-          console.error('Error loading data:', err);
-          // Puedes agregar lógica adicional para manejar el error, mostrar un mensaje, etc.
-        },
-        complete: () => {
-          this.toggleLoading();
-          // Puedes realizar otras acciones después de completar la carga de datos
-        }
-      });
+      next: response => this.maps = response,
+      error: err => console.log(err),
+      complete: () => {this.toggleLoading()}
     });
   };
 
+
+  appendData = (): void => {
+    //console.log('currentPage:', this.currentPage);
+    this.toggleLoading();
+
+    this.service.getItemsMaps(this.currentPage,this.itemsPerPage).pipe(
+      map((response: any[]) => {
+        return response.map(item => ({
+          id: item.id,
+          name: item.name,
+          image: item.imageUrl,
+          color: item.gameMode.color,
+          }));
+        
+             
+    })
+  
+    ).subscribe({
+      next: response => this.maps = [...this.maps, ...response],
+      error: err => console.log(err),
+      complete: () => this.toggleLoading()
+    })
+
+  }
+
+
+  handleFilterSelection(filter: string): void {
+    // Aquí puedes realizar acciones específicas según el filtro seleccionado
+    console.log(`Filtro seleccionado: ${filter}`);
+    this.service.getFilteredMaps(filter).pipe(
+      map((response: any[]) => {
+        const uniqueMaps = this.getUniqueMaps(response);
+        return uniqueMaps.map(item => ({
+          id: item.id,
+          name: item.name,
+          image: item.imageUrl,
+          color: item.gameMode.color,
+        }));
+      })
+    ).subscribe({
+      next: response => this.maps = response,
+      error: err => console.log(err),
+      complete: () => {this.toggleLoading(),console.log('maps:', this.maps)}
+    });
+    
+      
+  
+
+  }
 
 
 
@@ -117,119 +148,9 @@ export class MapsComponent implements OnInit, OnChanges {
     return uniqueMaps;
   }
 
-  appendData = (): void => {
-    //console.log('currentPage:', this.currentPage);
-    this.toggleLoading();
-    console.log('currentPage:', this.currentPage);
-    this.getItemsMaps(this.currentPage, this.itemsPerPage);
-    console.log('itemsMaps:', this.itemsMaps);
-
-
-  }
-
-  getItemsMaps(page = 1, itemsPerPage = 10): Observable<any[]> {
-    const startIndex = (page - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    //le agrego los items a itemsMaps sin borrar los anteriores
-    this.itemsMaps = [...this.itemsMaps, ...this.maps.slice(startIndex, endIndex)];
-    
-    
-    console.log('Entra en getItemsMaps:', this.itemsMaps);
-    return of(this.itemsMaps);
-  }
-
-
-
-
-
-/*
-  getItemsMaps(page = 1, itemsPerPage = 10): Observable<any[]> {
-    const startIndex = (page - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    this.itemsMaps = this.maps.slice(startIndex, endIndex);
-    console.log('startIndex:', this.itemsMaps);
-
-    return of(this.itemsMaps);
-  }
-*/
-
-
 
 }
 
 
 
 
-/*
- 
- loadData = (): void => {
-
-   ngOnInit(): void {
-   this.loadData();
-
-
- }
-
-   this.toggleLoading();
-
-   this.getItemsMaps(this.currentPage, this.itemsPerPage).pipe(
-     map((response: any[]) => {
-       const uniqueMaps = this.getUniqueMaps(response);
-       return uniqueMaps.map(item => ({
-         id: item.id,
-         name: item.name,
-         image: item.imageUrl,
-         color: item.gameMode.color,
-         filter: item.gameMode.name
-       }));
-     })
-   ).subscribe({
-     next: (response) => {
-       this.maps = response;
-     },
-     error: (err) => {
-       console.error('Error loading data:', err);
-       // Puedes agregar lógica adicional para manejar el error, mostrar un mensaje, etc.
-     },
-     complete: () => {
-       this.toggleLoading();
-       // Puedes realizar otras acciones después de completar la carga de datos
-     }
-   });
- };
- 
-   appendData = ():void => {
-
-   this.toggleLoading();
-
-   this.service.getItemsMaps(this.currentPage, this.itemsPerPage).pipe(
-   map((response: any[]) => {
-     return response.map(item => ({
-       id: item.id,
-       name: item.name,
-       image: item.imageUrl,
-       color: item.gameMode.color,
-     }));
-   })
-   ).subscribe({
-     next: response => this.maps = [...this.maps, ...response],
-     error: err => console.log(err),
-     complete: () => this.toggleLoading()
-   })
-
- }
-
- 
-
-
- onScroll = () => {
-  
-     this.currentPage++;
-     this.appendData();
-   
- }
-
- 
- 
- 
- */

@@ -32,6 +32,7 @@ body {
 
 .owl-item{
     text-align: center;
+    margin: 0 2rem;
     
 }
 .owl-item a{
@@ -39,7 +40,7 @@ body {
 }
 .owl-stage {
     display: flex ;
-    /* Otros estilos si es necesario */
+    align-items: center;
   }
 
 

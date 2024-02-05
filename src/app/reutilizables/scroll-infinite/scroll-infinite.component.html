@@ -14,8 +14,8 @@
     
    
     <owl-carousel-o  class="carrousel-options" [options]="customOptions">
-        <ng-template *ngFor="let fl of tagFilter" carouselSlide>
-            <a class="tags" (click)="filtrar(fl)">{{fl}}</a>
+        <ng-template *ngFor="let fl of allFilters" carouselSlide>
+            <a class="tags" (click)="onFilterClick(fl)">{{fl}}</a>
         </ng-template>
     </owl-carousel-o>
 
@@ -29,7 +29,7 @@
                 </div>
                 <div class="Card-icon__name">
                     <a>
-                        {{dt.name}}
+                        {{dt.filter}}
                     </a>
                 </div>
 

@@ -11,7 +11,7 @@ export class MapsService {
 
   private url = 'http://localhost:3333/api/maps';
 
-  private totalMaps: any[]=[];
+  private totalMaps: any[] = [];
   constructor(private http: HttpClient) { }
 
 
@@ -24,21 +24,34 @@ export class MapsService {
         const items = [];
 
         for (let i = startIndex; i < endIndex; i++) {
-         // console.log('Respuesta de la API:', this.totalMaps.length);
-          
+
           if (i < this.totalMaps.length) {
-           // console.log("entro");
-            
+
             items.push(this.totalMaps[i]);
           }
         }
 
-        //console.log('Items:', items);
 
         return of(items);
       })
     );
   }
+
+
+  public getFilteredMaps(filter: string): Observable<any[]> {
+    return this.getMaps().pipe(
+      map((data: any[]) => {
+        console.log("filtro en getFilter: ", filter);
+        if (filter != "All") {
+          const filteredMaps = data.filter(map => map.gameMode.name == filter);
+          return filteredMaps;
+        }
+        return data;
+      })
+    );
+  }
+
+
 
 
 
@@ -54,9 +67,9 @@ export class MapsService {
   public getMap(id: number): Observable<any> {
     return this.http.get<any>(`${this.url}/${id}`).pipe(
       map((data: any) => {
-      
+
         //console.log(data);
-        
+
         return data || {}; // Retorna los datos como es habitual, devuelve un objeto vacío si no hay datos
       })
     );
