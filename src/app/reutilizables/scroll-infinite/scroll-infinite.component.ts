@@ -75,7 +75,7 @@ customOptions: OwlOptions = {
       //console.log('Datos recibidos en app-scroll-infinite:', this.data);
       this.tagFilter = [...new Set(this.data.map((item: any) => this.allFilters.filter))];
       this.tagFilter.unshift('All');    
-      console.log('Filter:', this.allFilters);
+      //console.log('Filter:', this.allFilters);
      // this.getItemsMaps();
   
 

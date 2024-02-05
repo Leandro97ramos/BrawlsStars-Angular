@@ -3,17 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { delay, Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class MapsService {
-
   private url = 'http://localhost:3333/api/maps';
-
   private totalMaps: any[] = [];
   constructor(private http: HttpClient) { }
-
 
   public getItemsMaps(page = 1, itemsPerPage = 10): Observable<any[]> {
     return this.getMaps().pipe(
@@ -22,16 +18,11 @@ export class MapsService {
         const startIndex = (page - 1) * itemsPerPage;
         const endIndex = startIndex + itemsPerPage;
         const items = [];
-
         for (let i = startIndex; i < endIndex; i++) {
-
           if (i < this.totalMaps.length) {
-
             items.push(this.totalMaps[i]);
           }
         }
-
-
         return of(items);
       })
     );
@@ -51,10 +42,6 @@ export class MapsService {
     );
   }
 
-
-
-
-
   public getMaps(): Observable<any[]> {
     return this.http.get<any[]>(this.url).pipe(
       map((data: any[]) => {
@@ -67,12 +54,8 @@ export class MapsService {
   public getMap(id: number): Observable<any> {
     return this.http.get<any>(`${this.url}/${id}`).pipe(
       map((data: any) => {
-
-        //console.log(data);
-
         return data || {}; // Retorna los datos como es habitual, devuelve un objeto vacío si no hay datos
       })
     );
-
   }
 }
