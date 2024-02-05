@@ -5,6 +5,6 @@
 (scrolled)="onScroll()" [scrollWindow]="true" >
 
 
-<app-scroll-infinite [data]="brawlers" [route]="'brawler'" ></app-scroll-infinite>
+<app-scroll-infinite [data]="brawlers" [allFilters]="filter" [route]="'brawler'" (filterSelected)="handleFilterSelection($event)" ></app-scroll-infinite>
 
 </div>

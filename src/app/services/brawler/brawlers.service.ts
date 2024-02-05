@@ -36,6 +36,20 @@ export class BrawlersService {
     );
   }
 
+  public getFilteredBrawls(filter: string): Observable<any[]> {
+    return this.getBrawlers().pipe(
+      map((data: any[]) => {
+        console.log("filtro en getFilter: ", filter);
+        if (filter != "All") {
+          const filteredBrawls = data.filter(map => map.class.name == filter);
+          return filteredBrawls;
+        }
+        return data;
+      })
+    );
+  }
+
+
   public getBrawlers(): Observable<any[]> {
     return this.http.get<any[]>(this.url).pipe(
       map((data: any[]) => {
