@@ -1,0 +1,98 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@font-face {
+    font-family: "Between 3 W01 Heavy";
+    src: url("https://db.onlinewebfonts.com/t/54d2c723706d214347692b298ddb40b5.eot");
+    src: url("https://db.onlinewebfonts.com/t/54d2c723706d214347692b298ddb40b5.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/54d2c723706d214347692b298ddb40b5.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/54d2c723706d214347692b298ddb40b5.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/54d2c723706d214347692b298ddb40b5.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/54d2c723706d214347692b298ddb40b5.svg#Between 3 W01 Heavy")format("svg");
+}
+
+p{
+   font-weight: 700;
+
+}
+h2{
+    font-size: 2rem;
+    font-weight: 700; 
+}
+
+.name-hero {
+    width: calc(80% + 1rem);
+    height: calc(100% + 1rem);
+    padding: 35px 0px;
+    clip-path: polygon(0 35%, 100% 22%, 88% 72%, 0 79%);
+    opacity: 0.9;
+}
+.name-hero h3 {
+    color: #fff;
+}
+
+.nameAndClass {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    top: 3rem;
+    right: 5rem;
+}
+
+.nameAndClass h2 {
+    font-family: "Between 3 W01 Heavy";
+    font-size: 2.5rem;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-weight: 100;
+    rotate: -5deg;
+    text-transform: uppercase;
+}
+
+.nameAndClass h3 {
+    rotate: -2deg;
+}
+
+.image-hero {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+}
+.description p{
+    text-align: justify;
+}
+
+.star-powers .subtitle, .gadgets .subtitle{
+    font-size: 3rem;
+}
+
+
+.star-powers h2{
+    color: #FFD421;
+}
+
+.gadgets h2{
+    color: #22e72a;
+}
+
+.gadgets, .star-powers{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    margin: 2rem 0;
+}
+.gadget, .star-power{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.gadget img , .star-power img{
+    width: 45%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.gadget-description h2, .star-power-description h2{
+    text-align: center;
+      
+}

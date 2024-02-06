@@ -1,0 +1,21 @@
+<div>
+    <div class="bannerMaps">
+        <div class="bannerInfo" [ngStyle]="{'background': map.gameMode.bgColor}">
+            <img class="bannerImg" src="{{map.gameMode.imageUrl}}" alt="{{map.name}}">
+            <div class="titleName">
+                <h2>{{map.gameMode.name}}</h2>
+                <h3>{{map.name}}</h3>
+            </div>
+        </div>
+        <img class="imgBaner" src="{{map.environment.imageUrl}}" alt="{{map.name}}">
+    </div>
+
+    <div class="containerMap">
+
+        
+        <img src="{{map.imageUrl}}" alt="{{map.name}}">
+
+    </div>
+
+
+</div>

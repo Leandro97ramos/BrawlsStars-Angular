@@ -4,6 +4,7 @@ import {BrawlersComponent} from './brawlers/brawlers.component';
 import { BrawlerDetailComponent } from './brawlers/brawler-detail/brawler-detail.component';
 import { HomeComponent } from './home/home.component';
 import { MapsComponent } from './maps/maps.component';
+import { MapsDetailComponent } from './maps/maps-detail/maps-detail.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
 
   //maps
   { path: 'maps', component: MapsComponent },
+  { path: 'maps/:id',component: MapsDetailComponent},
 
   //defaul
   { path: '', redirectTo: '/home', pathMatch: 'full' },

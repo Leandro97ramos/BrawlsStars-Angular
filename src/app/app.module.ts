@@ -12,12 +12,13 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrawlersComponent } from './brawlers/brawlers.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { CardIconBrawlsComponent } from './brawlers/card-icon-brawls/card-icon-brawls.component';
+//import { CardIconBrawlsComponent } from './brawlers/card-icon-brawls/card-icon-brawls.component';
 import { BrawlerDetailComponent } from './brawlers/brawler-detail/brawler-detail.component';
 import { HomeComponent } from './home/home.component';
 import { MapsComponent } from './maps/maps.component';
 import { ScrollInfiniteComponent } from './reutilizables/scroll-infinite/scroll-infinite.component';
 import { LoadingComponent } from './reutilizables/loading/loading.component';
+import { MapsDetailComponent } from './maps/maps-detail/maps-detail.component';
 
 
 
@@ -28,12 +29,13 @@ import { LoadingComponent } from './reutilizables/loading/loading.component';
     HeaderComponent,
     FooterComponent,
     BrawlersComponent,
-    CardIconBrawlsComponent,
+    //CardIconBrawlsComponent,
     BrawlerDetailComponent,
     HomeComponent,
     MapsComponent,
     ScrollInfiniteComponent,
     LoadingComponent,
+    MapsDetailComponent,
     
   
   ],

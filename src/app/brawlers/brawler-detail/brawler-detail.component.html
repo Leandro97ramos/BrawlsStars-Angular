@@ -1,13 +1,15 @@
 
 <div>
-    <div class="name-hero">
-        <h2>{{brawler.name}}</h2>
-        <div>{{brawler.class.name}}</div>
+    <div class="name-hero" [ngStyle]="{ 'background-color': hexToRgb(brawler.rarity.color) }">
+        <div class="nameAndClass">
+            <h2>{{brawler.name}}</h2>
+            <h3>{{brawler.class.name}}</h3>
+        </div>
 
     </div>
   
-    <div class="image-hero">
-        <img src="{{brawler.image}}" alt="">
+    <div class="image-hero" >
+        <img src="{{brawler.imageUrl}}" alt="{{brawler.name}}">
     </div>
 
     <div class="description">
@@ -15,40 +17,29 @@
     </div>
 
     <div class="gadgets">
+        <h2 class="subtitle">Gadgets</h2>
+        <div class="gadget" *ngFor="let gadget of brawler.gadgets">
+            <img src="{{gadget.imageUrl}}" alt="">
+            <div class="gadget-description">
+                <h2>{{gadget.name}}</h2>
+                <p>{{gadget.description}}</p>
+            </div>
+        </div>
 
     </div>
 
     <div class="star-powers">
+        <h2 class="subtitle">Star Powers</h2>
+        <div class="star-power"  *ngFor="let starPower of brawler.starPowers">
+            <img src="{{starPower.imageUrl}}" alt="">
+            <div class="star-power description">
+                <h2>{{starPower.name}}</h2>
+                <p>{{starPower.description}}</p>
+            </div>
 
     </div>
 
-    <div class="Stats">
-        <div class="stat">
-            <img src="assets/images/offense.png" alt="">
-            <label class="stat-name">Offense </label>
-            <div class="stat-value">{{brawler.offense}}</div>
-        </div>
-        <div>
-            <img src="assets/images/defense.png" alt="">
-
-            <label class="stat-name">Defense </label>
-            <div class="stat-value">{{brawler.defense}}</div>
-        </div>
-
-        <div>
-            <img src="assets/images/utility.png" alt="">
-
-            <label class="stat-name">Utility </label>
-            <div class="stat-value">{{brawler.utility}}</div>
-        </div>
-
-        <div>
-            <a><img src="assets/images/super.png" alt=""></a>
-            <label class="stat-name">Super </label>
-            <div class="stat-value">{{brawler.super}}</div>
-        </div>
-
-    </div>
+   
 
 
     

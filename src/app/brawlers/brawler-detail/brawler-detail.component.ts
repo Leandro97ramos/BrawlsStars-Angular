@@ -40,4 +40,18 @@ export class BrawlerDetailComponent implements OnInit {
     return this.brawler;
   }
 
+  hexToRgb(hex: string): string {
+    // Elimina el "#" si está presente
+    hex = hex.replace(/^#/, '');
+
+    // Convierte el color hexadecimal a componentes RGB
+    const r = parseInt(hex.substring(0, 2), 16);
+    const g = parseInt(hex.substring(2, 4), 16);
+    const b = parseInt(hex.substring(4, 6), 16);
+
+    // Devuelve el resultado en formato "rgb(r, g, b)"
+    return `rgb(${r}, ${g}, ${b}, 0.8 )`;
+  }
+
+
 }

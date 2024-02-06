@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CardIconBrawlsComponent } from './card-icon-brawls.component';
+import { MapsDetailComponent } from './maps-detail.component';
 
-describe('CardIconBrawlsComponent', () => {
-  let component: CardIconBrawlsComponent;
-  let fixture: ComponentFixture<CardIconBrawlsComponent>;
+describe('MapsDetailComponent', () => {
+  let component: MapsDetailComponent;
+  let fixture: ComponentFixture<MapsDetailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CardIconBrawlsComponent ]
+      declarations: [ MapsDetailComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CardIconBrawlsComponent);
+    fixture = TestBed.createComponent(MapsDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
