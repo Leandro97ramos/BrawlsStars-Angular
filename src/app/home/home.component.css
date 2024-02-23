@@ -8,18 +8,19 @@
 }
 
 
-.header__home{
+.header__home {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
-.header__texto{
+
+.header__texto {
     display: flex;
     flex-direction: column;
-     align-items: center;
- 
- }
+    align-items: center;
+
+}
 
 .header_boton {
     background-color: #FFB900;
@@ -34,36 +35,40 @@
     width: 70%;
 }
 
-.main_contenedor{
-    border: 1px solid black;
-    -webkit-box-shadow: 0px 6px 34px -19px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 6px 34px -19px rgba(0,0,0,0.75);
-    box-shadow: 0px 6px 34px -19px rgba(0,0,0,0.75);
+.main_contenedor {
+    -webkit-box-shadow: 0px 6px 34px -19px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 6px 34px -19px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 6px 34px -19px rgba(0, 0, 0, 0.75);
     margin: 75px 0;
-    padding: 25px;
+    padding: 2.6rem;
     font-size: 45px;
 }
-.main_contenedor a{
+
+.main_contenedor a {
     font-size: 25px;
 }
-.contenedor{
-    margin: 0 auto;
 
+.contenedor {
+    margin: 0px auto;
 }
+
 .contenedor .grid {
-  
+
     column-gap: 5rem;
     align-items: center;
 }
+
 .title_home {
     text-align: left;
     font-size: 25px;
 }
-.title.second{
+
+.title.second {
     text-align: center;
 
 }
-.shelly.imagen{
+
+.shelly.imagen {
     display: block;
 }
 
@@ -71,10 +76,11 @@
     background-color: #6834a670;
     box-shadow: 0px 0px 15px 3px rgb(0 0 0 / .15);
     padding: 2rem;
-    margin: 5% 0;
+    margin: 8% 0;
     transition-property: transform;
     transition-duration: 300ms;
 }
+
 .listado_elemento:hover {
     transform: scale(1.1);
 }
@@ -85,8 +91,84 @@
     color: #FFB900;
     margin: 0;
 }
+
 .text {
     margin: 0;
     font-size: 16px;
     text-align: center;
+}
+
+.img_main{
+    display: none;
+}
+
+
+/* media screen 500px  */
+
+@media screen and (min-width: 420px) {
+    .main_contenedor {
+        padding: 3rem;
+    }
+
+    .listado {
+        margin: 3rem;
+    }
+}
+
+
+
+@media screen and (min-width: 820px) {
+    .title_header {
+        font-size: 40px;
+    }
+
+    .text {
+        font-size: 20px;
+    }
+
+    .subtitle{
+        font-size: 25px;
+    }
+     .main_contenedor {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 50px;
+    }
+
+    .main_contenedor a {
+        font-size: 30px;
+    }
+
+    title_home {
+        font-size: 30px;
+    }
+
+
+    .main {
+        width: 82%;
+    }
+
+    .img_main{
+        display: block;
+        width: 33%;
+    }
+}
+
+
+
+@media screen and (min-width: 950px) {
+
+    .header__home {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header_boton {
+        max-width: 800px;
+    }
+
+
+
+
 }
