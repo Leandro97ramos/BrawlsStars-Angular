@@ -7,7 +7,7 @@ import { map, switchMap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class MapsService {
-  private url = 'http://localhost:3333/api/maps';
+  private url = 'https://brawlsstars-node.onrender.com/api/maps';
   private totalMaps: any[] = [];
   constructor(private http: HttpClient) { }
 
