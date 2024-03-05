@@ -35,6 +35,9 @@ body {
     margin: 0 2rem;
     
 }
+.owl-item .tags{
+    cursor: pointer;
+}
 .owl-item a{
     text-decoration: none;
 }

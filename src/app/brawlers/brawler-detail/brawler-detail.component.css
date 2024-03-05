@@ -1,4 +1,5 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
 @font-face {
     font-family: "Between 3 W01 Heavy";
     src: url("https://db.onlinewebfonts.com/t/54d2c723706d214347692b298ddb40b5.eot");
@@ -9,13 +10,13 @@
         url("https://db.onlinewebfonts.com/t/54d2c723706d214347692b298ddb40b5.svg#Between 3 W01 Heavy")format("svg");
 }
 
-p{
-   font-weight: 700;
-
+p {
+    font-weight: 700;
+    font-size: 1.8rem;
 }
-h2{
-    font-size: 2rem;
-    font-weight: 700; 
+
+h2 {
+    font-weight: 700;
 }
 
 .name-hero {
@@ -25,6 +26,17 @@ h2{
     clip-path: polygon(0 35%, 100% 22%, 88% 72%, 0 79%);
     opacity: 0.9;
 }
+
+.container-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 20px;
+
+
+}
+
 .name-hero h3 {
     color: #fff;
 }
@@ -39,60 +51,151 @@ h2{
 
 .nameAndClass h2 {
     font-family: "Between 3 W01 Heavy";
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #fff;
     margin: 0;
     padding: 0;
     font-weight: 100;
-    rotate: -5deg;
+    rotate: -1deg;
     text-transform: uppercase;
 }
 
 .nameAndClass h3 {
-    rotate: -2deg;
+    rotate: -1deg;
+    font-size: 1.8rem;
 }
 
 .image-hero {
     margin-top: 4rem;
+    max-width: 350px;
     display: flex;
     justify-content: center;
 }
-.description p{
+
+.description h2 {
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.description p {
     text-align: justify;
 }
 
-.star-powers .subtitle, .gadgets .subtitle{
+.star-powers .subtitle,
+.gadgets .subtitle {
     font-size: 3rem;
 }
 
 
-.star-powers h2{
+.star-powers h2 {
     color: #FFD421;
 }
 
-.gadgets h2{
+
+
+.gadgets h2 {
     color: #22e72a;
 }
 
-.gadgets, .star-powers{
+.gadgets,
+.star-powers {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
     margin: 2rem 0;
 }
-.gadget, .star-power{
+
+.gadget,
+.star-power {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.gadget img , .star-power img{
+
+.gadget img,
+.star-power img {
     width: 45%;
+    max-width: 205px;
     height: 100%;
+    max-height: 208px;
     border-radius: 10px;
 }
 
-.gadget-description h2, .star-power-description h2{
+.gadget-description h2,
+.star-power-description h2 {
     text-align: center;
-      
+
+}
+
+@media screen and (min-width: 700px) {
+    .container-gd-info {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+    }
+
+    .image-hero {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .image-hero img {
+        width: 100%;
+    }
+
+    .description {
+        width: 50%;
+    }
+
+    /*fonts*/
+    .nameAndClass h2 {
+        font-size: 4rem;
+    }
+
+    .nameAndClass h3 {
+        font-size: 2.5rem;
+    }
+
+    .gadget .description  {
+        
+        margin-left: 15px;
+     
+    }
+    .description h2 {
+        font-size: 2.2rem;
+    }
+
+    .description p {
+        font-size: 1.8rem;
+    }
+
+    .star-powers .subtitle,
+    .gadgets .subtitle {
+        font-size: 4rem;
+    }
+
+
+
+
+}
+
+@media screen and (min-width: 1000px){
+    
+    
+    .container-gd-info {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: center;
+    }
+    
+    .gadget {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }

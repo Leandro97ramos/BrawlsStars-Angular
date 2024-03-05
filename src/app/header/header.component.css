@@ -4,7 +4,7 @@
 
 .header {
     width: 100%;
-    margin: 5% 0;
+    margin-bottom: 5%;
 }
 
 
@@ -18,7 +18,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 5%;
 }
 
 .title {
@@ -44,7 +43,9 @@
 @media screen and (min-width: 990px) {
     .contenedor-header {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin: 30px 50px;
     }
     .header{
         margin-bottom: 5%;
@@ -54,9 +55,8 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        width: 100%;
-
     }
+
 
     .nav-item a {
         color: #dfdcdc;
@@ -80,97 +80,3 @@
 
 }
 
-/*
-
-
-.header {
-    padding: 0px 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-}
-
-
-.navegacion {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.navegacion_link {
-    padding: 5px 15px;
-    color: #fff;
-}
-.navegacion_link:hover {
-    color: #fff;
-    text-decoration: none;
-    transition-property: transform;
-    transition-duration: 300ms;
-}
-
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-.header_logo {
-    width: 160px;
-    margin: 0 auto 25px auto;
-}
-
-.contenedor-header {
-    display: flex;
-    flex-direction: row;
-}
-.barra {
-    display: flex;
-    flex-direction: column;
-}
-
-@media (min-width: 768px) { 
-    .header_logo {
-        margin: 0;
-    }
-
-    .barra{
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .navegacion {
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
-    }
-    .header__grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-        align-items: center;
-        justify-items: center;
-        width: 90%;
-    }
-
-    .header_imagen {
-        max-width: 30rem;
-        margin: 0 auto;
-    }
-
-    .header {
-        background-size: 1000px;
-    }
-
-
-    .header--azul {
-        clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 34% 100%, 7% 45%, 20% 0%);
-        background-color: #6834a6;
-        color: #FFF;
-        width: 52%;
-        height: 38%;
-        position: absolute;
-        right: 0%;
-        top: 0%;
-        z-index: -1;
-    }
-}
-*/

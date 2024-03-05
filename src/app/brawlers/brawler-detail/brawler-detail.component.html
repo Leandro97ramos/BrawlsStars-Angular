@@ -1,4 +1,3 @@
-
 <div>
     <div class="name-hero" [ngStyle]="{ 'background-color': hexToRgb(brawler.rarity.color) }">
         <div class="nameAndClass">
@@ -7,40 +6,51 @@
         </div>
 
     </div>
-  
-    <div class="image-hero" >
-        <img src="{{brawler.imageUrl}}" alt="{{brawler.name}}">
-    </div>
+    <div class="container-data">
 
-    <div class="description">
-        <p>{{brawler.description}}</p>
-    </div>
+        <div class="image-hero">
+            <img src="{{brawler.imageUrl}}" alt="{{brawler.name}}">
+        </div>
 
-    <div class="gadgets">
-        <h2 class="subtitle">Gadgets</h2>
-        <div class="gadget" *ngFor="let gadget of brawler.gadgets">
-            <img src="{{gadget.imageUrl}}" alt="">
-            <div class="gadget-description">
-                <h2>{{gadget.name}}</h2>
-                <p>{{gadget.description}}</p>
+        <div class="description">
+            <p>{{brawler.description}}</p>
+        </div>
+
+        <div class="star-powers">
+            <h2 class="subtitle">Star Powers</h2>
+
+            <div class="container-gd-info">
+                <div class="gadget" *ngFor="let starPower of brawler.starPowers">
+                    <img src="{{starPower.imageUrl}}" alt="">
+                    <div class="description">
+                        <h2>{{starPower.name}}</h2>
+                        <p>{{starPower.description}}</p>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="gadgets">
+            <h2 class="subtitle">Gadgets</h2>
+
+            <div class="container-gd-info">
+
+
+                <div class="gadget" *ngFor="let gadget of brawler.gadgets">
+                    <img src="{{gadget.imageUrl}}" alt="">
+                    <div class="description">
+                        <h2>{{gadget.name}}</h2>
+                        <p>{{gadget.description}}</p>
+                    </div>
+                </div>
             </div>
         </div>
 
+     
     </div>
 
-    <div class="star-powers">
-        <h2 class="subtitle">Star Powers</h2>
-        <div class="star-power"  *ngFor="let starPower of brawler.starPowers">
-            <img src="{{starPower.imageUrl}}" alt="">
-            <div class="star-power description">
-                <h2>{{starPower.name}}</h2>
-                <p>{{starPower.description}}</p>
-            </div>
-
-    </div>
-
-   
-
-
-    
 </div>

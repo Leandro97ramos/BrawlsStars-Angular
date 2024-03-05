@@ -1,39 +1,34 @@
 <app-loading *ngIf="!isDataAvailable"></app-loading>
 
 <ng-container *ngIf="isDataAvailable; else dataNotReady">
-    <ng-container *ngTemplateOutlet="dataReady"></ng-container>
-</ng-container>
-
-<ng-template #dataNotReady>
-    <div>No hay datos disponibles</div>
-
-</ng-template>
-
-<ng-template #dataReady>
-
-    
-   
-    <owl-carousel-o  class="carrousel-options" [options]="customOptions">
+    <owl-carousel-o *ngIf="allFilters && allFilters.length > 0" class="carrousel-options" [options]="tagOptions">
         <ng-template *ngFor="let fl of allFilters" carouselSlide>
             <a class="tags" (click)="onFilterClick(fl)">{{fl}}</a>
         </ng-template>
     </owl-carousel-o>
 
 
-    <ul [ngClass]="styleClassMap[route]">
-        <li *ngFor="let dt of data" [routerLink]="['/' + route + '/' + dt.id]">
 
-        
+    <ng-container>
+        <ul [ngClass]="styleClassMap[route]">
+            <li *ngFor="let dt of data" [routerLink]="['/' + route + '/' + dt.id]">
                 <div class="Card-icon__image" [style.border]="'5px solid ' + dt.color">
                     <img src="{{dt.image}}" alt="{{dt.name}}">
                 </div>
                 <div class="Card-icon__name">
-                    <a>
-                        {{dt.name}}
-                    </a>
+                    <a>{{dt.name}}</a>
                 </div>
+            </li>
+        </ul>
 
-        </li>
-    </ul>
+    </ng-container>
 
+
+
+
+  
+</ng-container>
+
+<ng-template #dataNotReady>
+    <div>No hay datos disponibles</div>
 </ng-template>
