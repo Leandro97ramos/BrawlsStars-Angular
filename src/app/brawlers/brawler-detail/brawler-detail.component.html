@@ -1,11 +1,6 @@
+<!--
 <div>
-    <div class="name-hero" [ngStyle]="{ 'background-color': hexToRgb(brawler.rarity.color) }">
-        <div class="nameAndClass">
-            <h2>{{brawler.name}}</h2>
-            <h3>{{brawler.class.name}}</h3>
-        </div>
-
-    </div>
+   
     <div class="container-data">
 
         <div class="image-hero">
@@ -50,7 +45,76 @@
             </div>
         </div>
 
-     
+
     </div>
 
+</div>
+-->
+<div class="name-hero" [ngStyle]="{ 'background-color': hexToRgb(brawler.rarity.color) }">
+    <div class="nameAndClass">
+        <h2>{{brawler.name}}</h2>
+        <h3>{{brawler.class.name}}</h3>
+    </div>
+
+</div>
+
+<div class="container py-4 py-xl-5">
+
+    <div class="row row-cols-1 row-cols-md-2">
+        <div class="col">
+            <img class="rounded w-100 h-100 fit-cover" style="min-height: 260px;" src="{{brawler.imageUrl}}" />
+
+        </div>
+        <!-- COl-->
+
+        <div class="col d-flex flex-column justify-content-between p-4">
+            <!-- ROW-->
+            <div class="row">
+                <div class="col" *ngFor="let gadget of brawler.gadgets">
+                    <!-- COl POR ITEM-->
+
+                    <div
+                        class="text-center text-md-center d-flex flex-column align-items-center align-items-md-start align-items-xxl-center mb-5">
+
+                        <div
+                            class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon md">
+                            <img src="{{gadget.imageUrl}}" width="97" height="101" />
+                        </div>
+                        <div>
+                            <h2>{{gadget.name}}</h2>
+                            <p>{{gadget.description}}</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="row">
+
+
+                <div class="col" *ngFor="let starPower of brawler.starPowers">
+                    <div
+                    class="text-center text-md-center d-flex flex-column align-items-center align-items-md-start align-items-xxl-center mb-5">
+                        <div
+                            class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon md">
+                            <img src="{{starPower.imageUrl}}" width="97" height="101" />
+                        </div>
+                        <div>
+                            <h2>{{starPower.name}}</h2>
+                            <p>{{starPower.description}}</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
 </div>
