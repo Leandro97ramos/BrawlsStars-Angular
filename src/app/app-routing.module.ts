@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'maps/:id',component: MapsDetailComponent},
 
   //defaul
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 
   //{ path: '**', redirectTo: '/brawlers', pathMatch: 'full' },
 ]
