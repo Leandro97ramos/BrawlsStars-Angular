@@ -25,7 +25,7 @@ const routes: Routes = [
   //defaul
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 
-  //{ path: '**', redirectTo: '/brawlers', pathMatch: 'full' },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ]
 
 @NgModule({
