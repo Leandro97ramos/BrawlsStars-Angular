@@ -1,0 +1,35 @@
+* {
+    font-size: 13px;
+}
+
+.title-login {
+    font-size: 30px;
+    font-weight: 700;
+    color: #FFB900;
+    margin: 0;
+}
+
+.card-container {
+    background-image: url('../../assets/sprout.jpg');
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    min-height: 656px;
+
+}
+
+.card-body {}
+
+.card-body form {
+    opacity: 0.86;
+    margin-top: 19%;
+    width: 100%;
+}
+
+.card-body form p{
+    font-weight: 700;
+}
+
+.card-body form input,button {
+    padding: 12px;
+}
