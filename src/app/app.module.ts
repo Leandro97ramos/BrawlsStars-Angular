@@ -19,7 +19,6 @@ import { MapsComponent } from './maps/maps.component';
 import { ScrollInfiniteComponent } from './reutilizables/scroll-infinite/scroll-infinite.component';
 import { LoadingComponent } from './reutilizables/loading/loading.component';
 import { MapsDetailComponent } from './maps/maps-detail/maps-detail.component';
-import { LoginComponent } from './login/login.component';
 import { PostsComponent } from './posts/posts.component';
 import { AuthComponent } from './auth/auth.component';
 
@@ -39,7 +38,6 @@ import { AuthComponent } from './auth/auth.component';
     ScrollInfiniteComponent,
     LoadingComponent,
     MapsDetailComponent,
-    LoginComponent,
     PostsComponent,
     AuthComponent,
     
